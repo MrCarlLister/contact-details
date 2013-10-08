@@ -21,7 +21,7 @@ final class BirdBrain_Contact_Details {
 			return;
 			
 		if( $data = get_option( 'contact_details' ) )
-			echo $data[$attributes['type']];
+			return $data[$attributes['type']];
 	
 	}
 	

@@ -4,7 +4,7 @@ Donate link:
 Tags: contact,details,address,email,fax,global,info,mobile,options,phone
 Requires at least: 2.9
 Tested up to: 3.6.1
-Stable tag: 1.0
+Stable tag: 1.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -19,6 +19,7 @@ Adds the ability to save contact information in the administration area. These d
 * Save your contact details at Settings -> Contact Details
 * Display your contact details anywhere in your theme using a simple shortcode. EG, [contact type=“business_name”]
 * All available shortcodes are displayed on the Contact Details page
+
 
 If you have found this plugin useful, consider taking a moment to rate it.
 
@@ -40,6 +41,9 @@ If you have found this plugin useful, consider taking a moment to rate it.
 1. Contact Details page in the WordPress administration area
 
 == Changelog ==
+
+= 1.1 =
+* Modified shortcode behaviour to return output instead of directly printing
 
 = 1.0 =
 * Initial release of plugin
