@@ -129,7 +129,7 @@ final class BirdBrain_Contact_Details {
 			
 				echo '<label for="' . $key . '">' . $title . '</label>';
 				echo '<input type="text" name="contact_details[' . $key . ']" value="' . $details[$key] . '" />&nbsp;&nbsp;&nbsp;';
-				echo '<em>[contact type="' . $key . '"]</em>';				
+				echo '[contact type="' . $key . '"]';
 				echo '<br /><br />';
 				
 			}
