@@ -43,7 +43,7 @@ final class BirdBrain_Contact_Details {
 	
 		// Check if posting, if so, save data
 		if( !empty( $_POST ) )
-			update_option( 'contact_details', $_POST['contact_details'] );
+			update_option( 'contact_details', array_map( 'sanitize_text_field', $_POST['contact_details'] ) );
 			
 		$details = get_option( 'contact_details' );
 		
@@ -128,7 +128,7 @@ final class BirdBrain_Contact_Details {
 			foreach( $fields as $key => $title ) {
 			
 				echo '<label for="' . $key . '">' . $title . '</label>';
-				echo '<input type="text" name="contact_details[' . $key . ']" value="' . $details[$key] . '" />&nbsp;&nbsp;&nbsp;';
+				echo '<input type="text" name="contact_details[' . $key . ']" value="' . esc_attr( $details[$key] ) . '" />&nbsp;&nbsp;&nbsp;';
 				echo '[contact type="' . $key . '"]';
 				echo '<br /><br />';
 				
