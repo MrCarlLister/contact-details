@@ -40,10 +40,6 @@ final class BirdBrain_Contact_Details {
 	}
 	
 	public static function _options_page () {
-	
-		// Check if posting, if so, save data
-		if( !empty( $_POST ) )
-			update_option( 'contact_details', array_map( 'sanitize_text_field', $_POST['contact_details'] ) );
 			
 		$details = get_option( 'contact_details' );
 		
@@ -115,7 +111,29 @@ final class BirdBrain_Contact_Details {
 		echo '	<h2>Contact Details</h2>';
 		
 		echo '	<p>Enter your contact details below. To display any particular contact details on your website, use the shortcode supplied</p>';
-
+		
+		// Check if posting, if so, save data
+		if( !empty( $_POST ) && isset( $_POST['_nonce'] ) ) {
+			
+			if( wp_verify_nonce( $_POST['_nonce'], '_contact_details' ) ) {
+				
+				echo '<div id="message" class="updated below-h2">';
+							
+				update_option( 'contact_details', array_map( 'sanitize_text_field', $_POST['contact_details'] ) );
+				echo '<p>Successfully updated your Contact Details.</p>';
+			
+			}
+			else {
+			
+				echo '<div id="message" class="error below-h2">';
+				echo '<p>Could not verify this action. Please try again.</p>';
+				
+			}
+			
+			echo '</div>';
+				
+		}
+		
 		echo '	<form id="contact-details" name="contact-details" method="POST" action="#">';
 		
 		// Loop through "sections" and output form fields
@@ -138,6 +156,7 @@ final class BirdBrain_Contact_Details {
 		
 		}
 		
+		echo '<input type="hidden" name="_nonce" value="' . wp_create_nonce( '_contact_details' ) . '" />';
 		echo '<input type="submit" value="Save Details" class="button button-primary" />';
 		
 		echo '	</form>';
