@@ -4,7 +4,7 @@ Plugin Name: Contact Details
 Plugin URI: http://www.birdbrain.com.au/plugin/contact-details
 Description: Adds the simple ability for your clients to easily enter their contact details and output them wherever they like with a single shortcode
 Author: BirdBrain Logic
-Version: 1.2.3
+Version: 1.2.4
 Author URI: http://www.birdbrain.com.au
 */
 

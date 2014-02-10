@@ -40,8 +40,6 @@ final class BirdBrain_Contact_Details {
 	}
 	
 	public static function _options_page () {
-			
-		$details = get_option( 'contact_details' );
 		
 		// Array for storing form structure
 		$data = array(
@@ -118,9 +116,11 @@ final class BirdBrain_Contact_Details {
 			if( wp_verify_nonce( $_POST['_nonce'], '_contact_details' ) ) {
 				
 				echo '<div id="message" class="updated below-h2">';
-							
-				update_option( 'contact_details', array_map( 'sanitize_text_field', $_POST['contact_details'] ) );
-				echo '<p>Successfully updated your Contact Details.</p>';
+			
+				if( update_option( 'contact_details', array_map( 'sanitize_text_field', $_POST['contact_details'] ) ) )
+					echo '<p>Successfully updated your Contact Details.</p>';
+				else
+					echo '<p class="error">Hmm.. looks like there was a problem. Please try again.</p>';
 			
 			}
 			else {
@@ -133,6 +133,9 @@ final class BirdBrain_Contact_Details {
 			echo '</div>';
 				
 		}
+		
+		// Grab data
+		$details = get_option( 'contact_details' );
 		
 		echo '	<form id="contact-details" name="contact-details" method="POST" action="#">';
 		
