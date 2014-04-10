@@ -1,5 +1,5 @@
 === Contact Details ===
-Contributors: BirdBrain Logic
+Contributors: BirdBrain Logic, hello@lukerollans.me
 Donate link: 
 Tags: contact,details,address,email,fax,global,info,mobile,options,phone
 Requires at least: 2.9
