@@ -4,7 +4,7 @@ Donate link:
 Tags: contact,details,address,email,fax,global,info,mobile,options,phone
 Requires at least: 2.9
 Tested up to: 3.8.1
-Stable tag: 1.3
+Stable tag: 1.3.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -40,6 +40,9 @@ If you have found this plugin useful, consider taking a moment to rate it.
 1. Contact Details page in the WordPress administration area
 
 == Changelog ==
+
+= 1.3.1 =
+* When rendering the Email contact type, surround with mailto anchor tag
 
 = 1.3 =
 * When rendering the Email contact type, run through antispampot() to help prevent spam

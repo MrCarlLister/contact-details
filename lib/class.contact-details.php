@@ -22,8 +22,10 @@ final class BirdBrain_Contact_Details {
 
 		if( $data = get_option( 'contact_details' ) ) {
 			if( $attributes['type'] == 'email_address' ) {
-				return antispambot( $data[$attributes['type']] );
-			} else {
+					$theemail = $data[$attributes['type']];
+					$theemail = antispambot($theemail);
+					return "<a href='mailto:$theemail'>$theemail</a>";
+				} else {
 				return $data[$attributes['type']];
 			}
 		}
